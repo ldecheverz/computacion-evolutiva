@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,17 +13,13 @@ public class Main {
         try {
             TSPInstance instance = new TSPInstance(filePath);
 
-            int[][] matrix = instance.getCostMatrix();
-            int dimension = instance.getDimension();
+            List<City> cities = City.citiesReader(filePath);
 
-            System.out.println("Matriz de costos (" + dimension + "x" + dimension + "):\n");
-
-            for (int i = 0; i < dimension; i++) {
-                for (int j = 0; j < dimension; j++) {
-                    System.out.printf("%5d", matrix[i][j]);
-                }
-                System.out.println();
+            for (City city : cities) {
+                System.out.println(city);
             }
+
+            
 
         } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
