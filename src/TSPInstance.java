@@ -35,7 +35,6 @@ public class TSPInstance {
 
         reader.close();
 
-        // Convertir lista a matriz
         costMatrix = new int[dimension][dimension];
         Iterator<Integer> it = matrixData.iterator();
         for (int i = 0; i < dimension; i++) {
