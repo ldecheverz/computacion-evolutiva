@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class TSPMain {
+public class TSP {
 
     private static int POPULATION_SIZE = 300;
     private static final int TOURNAMENT_SIZE = 2;
@@ -88,8 +88,8 @@ public class TSPMain {
                 bestRoute = currentBest;
             }
 
-            System.out.printf("Generación %d - Mejor distancia: %.2f%n", gen + 1, bestRoute.getTotalDistance());
         }
+        System.out.printf("Mejor distancia: %.2f%n", bestRoute.getTotalDistance());
         long endTime = System.currentTimeMillis();
         double executionTimeSeconds = (endTime - startTime) / 1000.0;
         saveResultsToFile(bestRoute, fitnessEvolution, executionTimeSeconds, selectorType, mutatorType, crossoverType, initiatorType);
